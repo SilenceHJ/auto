@@ -1,0 +1,25 @@
+
+
+# 数据库配置
+spring:
+  datasource:
+    druid:
+      username: root
+      password: huangjin
+      url: jdbc:mysql://127.0.0.1:3306/hj_study
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 2
+      max-active: 30
+      max-wait: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 1
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.api.auto.entity
+
+# pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
